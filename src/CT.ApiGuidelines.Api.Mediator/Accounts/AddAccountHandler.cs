@@ -11,6 +11,7 @@
 
     public class AddAccountHandler : IRequestHandler<AddAccountCommand, IResult<AccountGetV1>>
     {
+        private static readonly Random Random = new Random();
         private readonly IAccountRepository _accountRepository;
         private readonly IMapTo<AccountGetV1, Account> _accountMapper;
         private readonly IOwnerRepository _ownerRepository;
@@ -34,7 +35,7 @@
                 return Result.Fail<AccountGetV1>($"Could not find owner with OwnerId {request.AccountPostModel.OwnerId}");
             }
 
-            var account = new Account(Guid.NewGuid(), new AccountReference("FW", 10), owner.Value.Id);
+            var account = new Account(Guid.NewGuid(), new AccountReference("FW", Random.Next(1, 9999999)), owner.Value.Id);
 
             _accountRepository.Add(account);
 
