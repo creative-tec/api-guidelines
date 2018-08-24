@@ -1,0 +1,37 @@
+GET /accounts HTTP/1.1
+Host: localhost:5000
+
+###
+
+GET /accounts/00000000-0000-0000-0000-000000000001 HTTP/1.1
+Host: localhost:5000
+
+###
+
+GET /accounts/00000000-0000-0000-0000-999999999999 HTTP/1.1
+Host: localhost:5000
+
+###
+
+GET /accounts/sdfgsdfgdfgd HTTP/1.1
+Host: localhost:5000
+
+###
+
+POST /accounts HTTP/1.1
+Host: localhost:5000
+Content-Type: application/json
+
+{
+  "ownerId": "99999999-9999-9999-9999-999999999999"
+}
+###
+
+POST /accounts HTTP/1.1
+Host: localhost:5000
+Content-Type: application/json
+
+{
+  "ownerId": "11111111-0000-0000-0000-000000000001"
+}
+###

@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\tools\stylecop.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="5.1.0" />
+    <PackageReference Include="stylecop.analyzers" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CT.ApiGuidelines.Api.Models\CT.ApiGuidelines.Api.Models.csproj" />
+    <ProjectReference Include="..\CT.ApiGuidelines.Domain\CT.ApiGuidelines.Domain.csproj" />
+    <ProjectReference Include="..\CT.ApiGuidelines.Infrastructure\CT.ApiGuidelines.Infrastructure.csproj" />
+    <ProjectReference Include="..\CT.Core.Common\CT.Core.Common.csproj" />
+  </ItemGroup>
+
+</Project>
